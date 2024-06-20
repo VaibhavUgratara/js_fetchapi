@@ -1,18 +1,27 @@
-let anime_api=fetch("https://nekos.best/api/v2/sleep?amount=11")
-
-anime_api.then((v)=>{
-    return v.json()
+let memes=fetch("https://api.imgflip.com/get_memes")
+memes.then((response)=>{
+    return response.json()
 }).then((value)=>{
-    console.log(value)
-    in_html=""
-   for (i in value.results){
-   let Cards=document.getElementById("Cards")
-    in_html+=`<div class="card my-2 mx-2" style="width: 20rem;">
-  <img src="${value.results[i].url}" class="card-img-top" alt="sleep" style="aspect-ratio: 2/1;">
-  <div class="card-body">
-    <h5 class="card-title">${value.results[i].anime_name}</h5>
+    let m=value.data.memes
+    let iHTML=""
+    let temp=document.getElementById("templates")
+    for (i in m){
+        iHTML+=
+`<div class="card mb-3 mx-2 border-dark" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="${m[i].url}" class="img-fluid rounded-start" alt="${m[i].id}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">${m[i].name}</h5>
+        <a href="${m[i].url}" target="_blank" class="btn btn-dark">Open Image</a>
+      </div>
+    </div>
   </div>
 </div>`
-   }
-   Cards.innerHTML=in_html
+    }
+    setTimeout(()=>{
+        temp.innerHTML=iHTML
+    },500)
 })
