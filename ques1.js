@@ -22,7 +22,8 @@ memes.then((response)=>{
 </div>`
     }
 temp.innerHTML=iHTML
-}).catch((err)=>{
+})
+    memes.catch((err)=>{
     let temp=document.getElementById("templates")
     temp.innerHTML="hello"
 })
