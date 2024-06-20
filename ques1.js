@@ -1,4 +1,6 @@
+console.log(1)
 let memes=fetch("https://api.imgflip.com/get_memes")
+console.log(2)
 memes.then((response)=>{
     return response.json()
 }).then((value)=>{
