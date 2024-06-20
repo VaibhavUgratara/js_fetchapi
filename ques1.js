@@ -20,8 +20,6 @@ memes.then((response)=>{
     </div>
   </div>
 </div>`
+temp.innerHTML=iHTML
     }
-    setTimeout(()=>{
-        temp.innerHTML=iHTML
-    },500)
 })
