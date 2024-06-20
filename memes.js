@@ -1,6 +1,4 @@
-console.log(1)
 let memes=fetch("https://api.imgflip.com/get_memes")
-console.log(2)
 memes.then((response)=>{
     return response.json()
 }).then((value)=>{
@@ -24,8 +22,4 @@ memes.then((response)=>{
 </div>`
     }
 temp.innerHTML=iHTML
-})
-    memes.catch((err)=>{
-    let temp=document.getElementById("templates")
-    temp.innerHTML="hello"
 })
