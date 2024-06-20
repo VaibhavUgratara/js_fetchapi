@@ -20,6 +20,6 @@ memes.then((response)=>{
     </div>
   </div>
 </div>`
-temp.innerHTML=iHTML
     }
+temp.innerHTML=iHTML
 })
